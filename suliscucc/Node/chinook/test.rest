@@ -1,0 +1,16 @@
+GET http://localhost:8000/
+###
+GET http://localhost:8000/artists
+###
+GET http://localhost:8000/genres
+###
+POST http://localhost:8000/genres
+Content-Type: application/json
+
+{
+    "name":"trash metal"
+}
+###
+DELETE http://localhost:8000/genres/42
+###
+GET http://localhost:8000/artist-albums/AC%2FDC

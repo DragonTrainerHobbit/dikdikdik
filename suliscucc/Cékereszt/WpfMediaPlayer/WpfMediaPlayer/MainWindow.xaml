@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfMediaPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMediaPlayer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <MediaElement x:Name="mediaPlayer" Stretch="Uniform" />
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Center">
+            <Button x:Name="buttonPlay" Content="Play" Margin="2" FontSize="30" Click="buttonPlay_Click" />
+            <Button x:Name="buttonPause" Content="Pause" Margin="2" FontSize="30" Click="buttonPause_Click" />
+            <Button x:Name="buttonStop" Content="Stop" Margin="2" FontSize="30" Click="buttonStop_Click" />
+            <Button x:Name="buttonOpen" Content="Open" Margin="2" FontSize="30" Click="buttonOpen_Click" />
+        </WrapPanel>
+        <ListBox x:Name="listboxMedialist" ItemsSource="{Binding Mediaelemek,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" SelectionChanged="listboxMedialist_SelectionChanged" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding FajlNev}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+</Window>

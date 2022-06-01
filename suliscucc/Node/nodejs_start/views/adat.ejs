@@ -1,0 +1,15 @@
+<div>
+    <%=adatok.results[0].name.first 
+    %>
+
+    <% for(i=0;i<adatok.results.length;i++) {%>
+            <p><%=adatok.results[i].name.first %></p> 
+        <%}
+    %>
+    <p>-----------------------------</p>
+    <% adatok.results.forEach(adat=>{%>
+        <p><%=adat.name.first %>,<%=adat.name.last %></p>
+        
+    <%}) %>
+    
+</div>

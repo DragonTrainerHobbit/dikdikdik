@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <Title>Post</Title>
+    </head>
+    <body>
+        <h1>RESTful API POST</h1>
+        <script>
+            const response=new XMLHttpRequest();
+            const adat=JSON.stringify(
+                {
+                    id:3,
+                    nev:"Miklós",
+                    kor:42
+                }
+            );
+            response.open('POST','http://127.0.0.1:8000/ember');
+            response.setRequestHeader('Content-type','application/json');
+            response.send(adat);
+            response.onload=(e)=>{
+                alert(response.response);
+            }
+
+        </script>
+    </body>
+</html>

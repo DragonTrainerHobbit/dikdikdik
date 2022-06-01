@@ -1,0 +1,11 @@
+<div>
+    <h1><%=adatok.results[0].name.first %></h1>
+    <h2><%=adatok.results[0].name.last %></h2>
+    <img src=<%=adatok.results[0].picture.large %>>
+
+    <% adatok.results.forEach(elem=>{%>
+        <p><%=elem.name.first %>,<%=elem.name.last %></p>
+        <p><img src=<%=elem.picture.large %>></p>
+    <%}) %>
+
+</div>
